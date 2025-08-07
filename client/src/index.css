@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(210 25% 7.8431%);
+  --card: hsl(180 6.6667% 97.0588%);
+  --card-foreground: hsl(210 25% 7.8431%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 25% 7.8431%);
+  --primary: hsl(214 100% 59%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(259 86% 57%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --success: hsl(158 76% 40%);
+  --success-foreground: hsl(0 0% 100%);
+  --warning: hsl(32 95% 44%);
+  --warning-foreground: hsl(0 0% 100%);
+  --error: hsl(3 87% 51%);
+  --error-foreground: hsl(0 0% 100%);
+  --muted: hsl(240 1.9608% 90%);
+  --muted-foreground: hsl(210 25% 7.8431%);
+  --accent: hsl(211.5789 51.3514% 92.7451%);
+  --accent-foreground: hsl(203.8863 88.2845% 53.1373%);
+  --destructive: hsl(3 87% 51%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(201.4286 30.4348% 90.9804%);
+  --input: hsl(200 23.0769% 97.4510%);
+  --ring: hsl(214 100% 59%);
+  --chart-1: hsl(214 100% 59%);
+  --chart-2: hsl(158 76% 40%);
+  --chart-3: hsl(32 95% 44%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(180 6.6667% 97.0588%);
+  --sidebar-foreground: hsl(210 25% 7.8431%);
+  --sidebar-primary: hsl(214 100% 59%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(211.5789 51.3514% 92.7451%);
+  --sidebar-accent-foreground: hsl(203.8863 88.2845% 53.1373%);
+  --sidebar-border: hsl(205.0000 25.0000% 90.5882%);
+  --sidebar-ring: hsl(214 100% 59%);
+  --font-sans: 'Cairo', 'Inter', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1.3rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(214 100% 59% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(214 100% 59% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 1px 2px -1px hsl(214 100% 59% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 1px 2px -1px hsl(214 100% 59% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 2px 4px -1px hsl(214 100% 59% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 4px 6px -1px hsl(214 100% 59% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 8px 10px -1px hsl(214 100% 59% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(214 100% 59% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(200 6.6667% 91.1765%);
+  --card: hsl(228 9.8039% 10%);
+  --card-foreground: hsl(0 0% 85.0980%);
+  --popover: hsl(0 0% 0%);
+  --popover-foreground: hsl(200 6.6667% 91.1765%);
+  --primary: hsl(214 100% 59%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(259 86% 57%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --success: hsl(158 76% 40%);
+  --success-foreground: hsl(0 0% 100%);
+  --warning: hsl(32 95% 44%);
+  --warning-foreground: hsl(0 0% 100%);
+  --error: hsl(3 87% 51%);
+  --error-foreground: hsl(0 0% 100%);
+  --muted: hsl(0 0% 9.4118%);
+  --muted-foreground: hsl(210 3.3898% 46.2745%);
+  --accent: hsl(205.7143 70% 7.8431%);
+  --accent-foreground: hsl(203.7736 87.6033% 52.5490%);
+  --destructive: hsl(3 87% 51%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 5.2632% 14.9020%);
+  --input: hsl(207.6923 27.6596% 18.4314%);
+  --ring: hsl(214 100% 59%);
+  --chart-1: hsl(214 100% 59%);
+  --chart-2: hsl(158 76% 40%);
+  --chart-3: hsl(32 95% 44%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(228 9.8039% 10%);
+  --sidebar-foreground: hsl(0 0% 85.0980%);
+  --sidebar-primary: hsl(214 100% 59%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(205.7143 70% 7.8431%);
+  --sidebar-accent-foreground: hsl(203.7736 87.6033% 52.5490%);
+  --sidebar-border: hsl(205.7143 15.7895% 26.0784%);
+  --sidebar-ring: hsl(214 100% 59%);
+  --font-sans: 'Cairo', 'Inter', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1.3rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(214 100% 59% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(214 100% 59% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 1px 2px -1px hsl(214 100% 59% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 1px 2px -1px hsl(214 100% 59% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 2px 4px -1px hsl(214 100% 59% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 4px 6px -1px hsl(214 100% 59% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(214 100% 59% / 0.00), 0px 8px 10px -1px hsl(214 100% 59% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(214 100% 59% / 0.00);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Cairo', 'Inter', sans-serif;
+  }
+
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+
+  /* Arabic text optimization */
+  .arabic-text {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* RTL support for flex layouts */
+  .flex-rtl {
+    flex-direction: row-reverse;
+  }
+
+  /* Custom focus mode animation */
+  .focus-mode {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { 
+      opacity: 1; 
+    }
+    50% { 
+      opacity: 0.8; 
+    }
+  }
+
+  /* Progress circle for smart review */
+  .progress-circle {
+    background: conic-gradient(var(--primary) 0deg 126deg, hsl(0 0% 90%) 126deg 360deg);
+  }
+
+  /* RTL flip for icons that need direction reversal */
+  .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  /* Better Arabic font rendering */
+  .font-arabic {
+    font-family: 'Cairo', sans-serif;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Enhanced button styles for Arabic interface */
+  .btn-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-primary:hover {
+    background-color: hsl(var(--primary) / 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+  }
+
+  .btn-secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-secondary:hover {
+    background-color: hsl(var(--secondary) / 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--secondary) / 0.3);
+  }
+
+  /* Custom scrollbar for Arabic content */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent-foreground));
+  }
+
+  /* Gradient text for branding */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Enhanced card shadows */
+  .card-shadow {
+    box-shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
+  }
+
+  .card-shadow-hover:hover {
+    box-shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* File type specific colors */
+  .file-pdf {
+    @apply bg-red-100 text-red-600;
+  }
+
+  .file-docx {
+    @apply bg-blue-100 text-blue-600;
+  }
+
+  .file-pptx {
+    @apply bg-green-100 text-green-600;
+  }
+
+  /* Status badges */
+  .badge-translated {
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+  }
+
+  .badge-reviewed {
+    background-color: hsl(var(--success) / 0.1);
+    color: hsl(var(--success));
+  }
+
+  .badge-completed {
+    background-color: hsl(var(--secondary) / 0.1);
+    color: hsl(var(--secondary));
+  }
+
+  .badge-pending {
+    background-color: hsl(var(--warning) / 0.1);
+    color: hsl(var(--warning));
+  }
+
+  /* RTL-specific utilities */
+  .ml-auto-rtl {
+    margin-inline-start: auto;
+  }
+
+  .mr-auto-rtl {
+    margin-inline-end: auto;
+  }
+
+  .text-start-rtl {
+    text-align: start;
+  }
+
+  .text-end-rtl {
+    text-align: end;
+  }
+
+  /* Loading shimmer effect */
+  .shimmer {
+    background: linear-gradient(90deg, 
+      hsl(var(--muted)) 25%, 
+      hsl(var(--background)) 50%, 
+      hsl(var(--muted)) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Study progress indicator */
+  .progress-ring {
+    transform: rotate(-90deg);
+  }
+
+  .progress-ring circle {
+    transition: stroke-dashoffset 0.3s ease-in-out;
+  }
+
+  /* Pomodoro timer specific styles */
+  .timer-active {
+    animation: timer-pulse 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes timer-pulse {
+    from {
+      background-color: hsl(var(--primary) / 0.1);
+    }
+    to {
+      background-color: hsl(var(--primary) / 0.2);
+    }
+  }
+
+  /* Focus mode overlay */
+  .focus-overlay {
+    backdrop-filter: blur(8px);
+    background-color: hsl(0 0% 0% / 0.8);
+  }
+
+  /* Exam reminder urgency colors */
+  .exam-urgent {
+    @apply border-l-4 border-error;
+    background-color: hsl(var(--error) / 0.05);
+  }
+
+  .exam-warning {
+    @apply border-l-4 border-warning;
+    background-color: hsl(var(--warning) / 0.05);
+  }
+
+  .exam-normal {
+    @apply border-l-4 border-primary;
+    background-color: hsl(var(--primary) / 0.05);
+  }
+
+  /* Accessibility improvements */
+  .focus-visible:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --border: hsl(0 0% 20%);
+      --input: hsl(0 0% 95%);
+    }
+    
+    .dark {
+      --border: hsl(0 0% 80%);
+      --input: hsl(0 0% 15%);
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .focus-mode,
+    .timer-active,
+    .shimmer,
+    .card-shadow-hover:hover {
+      animation: none;
+      transition: none;
+    }
+  }
+}
+
+/* Utility classes for the Study∀ application */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+
+  .bg-success-gradient {
+    background: linear-gradient(135deg, hsl(var(--success)), hsl(var(--primary)));
+  }
+
+  .bg-warning-gradient {
+    background: linear-gradient(135deg, hsl(var(--warning)), hsl(var(--error)));
+  }
+
+  /* Study app specific spacing */
+  .study-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .study-section {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+
+  /* Arabic number styling */
+  .arabic-numerals {
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+    unicode-bidi: bidi-override;
+  }
+
+  /* File upload drop zone */
+  .drop-zone {
+    @apply border-2 border-dashed border-primary/30;
+    background-color: hsl(var(--primary) / 0.05);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .drop-zone.active {
+    @apply border-primary;
+    background-color: hsl(var(--primary) / 0.1);
+  }
+
+  /* Progress indicators */
+  .progress-low {
+    @apply bg-error text-error-foreground;
+  }
+
+  .progress-medium {
+    @apply bg-warning text-warning-foreground;
+  }
+
+  .progress-high {
+    @apply bg-success text-success-foreground;
+  }
+
+  /* Calendar specific styles */
+  .calendar-today {
+    @apply bg-primary text-primary-foreground font-bold;
+  }
+
+  .calendar-event {
+    background-color: hsl(var(--secondary) / 0.2);
+    color: hsl(var(--secondary));
+    border-color: hsl(var(--secondary));
+  }
+
+  .calendar-exam {
+    background-color: hsl(var(--error) / 0.2);
+    color: hsl(var(--error));
+    border-color: hsl(var(--error));
+  }
+
+  /* Flashcard specific styles */
+  .flashcard {
+    perspective: 1000px;
+  }
+
+  .flashcard-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flashcard-front,
+  .flashcard-back {
+    backface-visibility: hidden;
+  }
+
+  .flashcard-back {
+    transform: rotateY(180deg);
+  }
+}
